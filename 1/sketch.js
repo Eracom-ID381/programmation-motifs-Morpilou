@@ -6,11 +6,11 @@ function setup() {
 }
 
 function draw() {
-  let x = 10;
-  fill(0);
-  while (x < width) {
-    ellipse(x, height / 2, 10, 10);
-    x = x + 30;
+  fill(color(random(0, 255), random(0, 255), random(0, 255)));
+  for (var x = 0; x < width; x = x + 10) {
+    for (var y = 0; y < height; y = y + 10) {
+      rect(x, y, random(0, 10), random(0, 10));
+    }
   }
 }
 
