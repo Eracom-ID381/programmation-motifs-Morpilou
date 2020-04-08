@@ -6,12 +6,25 @@ function setup() {
 }
 
 function draw() {
-  let x = 10;
-  fill(0);
-  while (x < width) {
-    ellipse(x, height / 2, 10, 10);
-    x = x + 30;
+  rectMode(CORNER);
+  var x = 0;
+  stroke(0);
+  frameRate(0);
+  noFill();
+  for (var i = 0; i < width + 10; i = i + 100) {
+    for (var b = 0; b < height + 10; b = b + 100) {
+      square(i, b, 10);
+    }
   }
+  for (var i = 0; i < width + 10; i = i + 100) {
+    strokeWeight(10);
+    for (var b = 0; b < height + 10; b = b + 100) {
+      point(i, b);
+    }
+  }
+
+
+
 }
 
 function windowResized() {
