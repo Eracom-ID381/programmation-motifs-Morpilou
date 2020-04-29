@@ -6,12 +6,17 @@ function setup() {
 }
 
 function draw() {
-  let x = 10;
-  fill(0);
-  while (x < width) {
-    ellipse(x, height / 2, 10, 10);
-    x = x + 30;
+
+  stroke(0);
+  for (let y = 0; y < height + 100; y = y + 100) {
+    for (let x = 0; x < width + 100; x = x + 100) {
+      for (let i = 200; i > 20; i = i - 20) {
+        fill(i);
+        ellipse(x, y, i, i);
+      }
+    }
   }
+
 }
 
 function windowResized() {
