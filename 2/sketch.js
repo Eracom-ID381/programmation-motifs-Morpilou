@@ -10,7 +10,7 @@ function draw() {
   let a = 20;
   let b = 2;
   noFill();
-  frameRate(random(2, 50));
+  frameRate(25);
   clear();
   background(0);
   rectMode(CENTER);

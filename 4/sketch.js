@@ -5,10 +5,19 @@ function setup() {
   background(255);
 }
 
+
 function draw() {
-  fill(0);
-  for (let x = 10; x < width; x = x + 30) {
-    ellipse(x, height / 2, 10, 10);
+  strokeWeight(10);
+
+  for (let i = 0; i < width; i = i + 10) {
+    stroke(random(0, 20))
+
+    point(random(i, 0), random(0, i));
+  }
+  for (let i = 0; i < height; i = i + 10) {
+    stroke(random(0, 20))
+
+    point(random(i, width), random(height, i));
   }
 }
 

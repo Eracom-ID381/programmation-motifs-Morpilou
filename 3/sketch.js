@@ -1,30 +1,60 @@
 function setup() {
-  let navWidth = document.getElementById("nav").offsetWidth;
+  var navWidth = document.getElementById("nav").offsetWidth;
   let canvas = createCanvas(windowWidth - navWidth, windowHeight);
   canvas.parent('canvas');
   background(255);
+  var sep =
+    print(sep);
 }
 
 function draw() {
+  pixelDensity(random(0.1, 1));
   rectMode(CORNER);
-  var x = 0;
   stroke(0);
-  frameRate(0);
+  frameRate(10);
   noFill();
-  for (var i = 0; i < width + 10; i = i + 100) {
-    for (var b = 0; b < height + 10; b = b + 100) {
+  for (var i = width / 100 * 10; i < width - width / 100 * 10; i = i + width / 100 * 10) {
+    for (var b = height / 100 * 10; b < height - height / 100 * 20; b = b + height / 100 * 10) {
+
+      push();
+      strokeWeight(0.2);
+      line(i, b, i + width / 100 * 10, b + height / 100 * 10);
+      pop();
+
+      push();
+      strokeWeight(0.2);
+      line(i + width / 100 * 10, b, i, b + height / 100 * 10);
+      pop();
+
+    }
+
+  }
+  for (var i = width / 100 * 10; i < width; i = i + width / 100 * 10) {
+    for (var b = height / 100 * 10; b < height - height / 100 * 10; b = b + height / 100 * 10) {
+
+      push();
       square(i, b, 10);
-    }
-  }
-  for (var i = 0; i < width + 10; i = i + 100) {
-    strokeWeight(10);
-    for (var b = 0; b < height + 10; b = b + 100) {
+      pop();
+
+      push();
+      square(i - 10, b - 10, 10);
+      pop();
+
+      push();
+      fill(color(122, random(150, 255), random(200, 255)));
+      circle(i, b, 20);
+      pop();
+
+      push();
+      strokeWeight(10);
       point(i, b);
+      pop();
+
+
+
     }
+
   }
-
-
-
 }
 
 function windowResized() {
