@@ -6,10 +6,38 @@ function setup() {
 }
 
 function draw() {
-  fill(0);
-  for (let x = 10; x < width; x = x + 30) {
-    ellipse(x, height / 2, 10, 10);
+  for (let x = 0; x < width; x = x + 50) {
+    for (let y = 0; y < height; y = y + 50) {
+      stroke(0);
+      fill(0);
+      point(x, y)
+    }
   }
+  for (let x = 0; x < width; x = x + 100) {
+    for (let y = 0; y < height; y = y + 100) {
+      stroke(0);
+      fill(0);
+      square(random(x, width), y, 2);
+      square(x, random(y, height), 2);
+    }
+  }
+  for (let x = 0; x < width; x = x + 100) {
+    for (let y = 0; y < height; y = y + 50) {
+      stroke(0);
+      fill(0);
+      line(x - 10, y, x + 10, y)
+    }
+  }
+  for (let x = 0; x < width; x = x + 50) {
+    for (let y = 0; y < height; y = y + 100) {
+      stroke(0);
+      fill(0);
+      line(x, y - 10, x, y + 10)
+    }
+  }
+
+
+
 }
 
 function windowResized() {
